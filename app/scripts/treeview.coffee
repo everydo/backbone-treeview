@@ -17,8 +17,6 @@ define [
                 collection: new TreeNodeCollection()
                 controller: this
 
-            # 加载 css
-            @treeView.loadCss @css
             # 初始化保存 当前勾选节点 的变量
             @checkedNode = {}
             # 初始化保存 已加载节点 的变量

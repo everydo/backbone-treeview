@@ -7,7 +7,6 @@ require [
 
   treeView = new TreeView
     checkable: true
-    css: 'styles/tree_view.css'
     is_static: false
 
   treeView.render '#tree'

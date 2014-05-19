@@ -9,19 +9,21 @@ a treeview component for backbone.marrionette
 使用 `grunt server` 进行预览
 
 #### 安装RequireJS
-在 `require.config` 的 paths 中指定 `treeview` 的路径
+在 `require.config` 的 `paths` 中指定 `treeview` 的路径
 
 #### 通过RequireJS使用:
     require(['backbone', 'marionette', 'treeview'], function(Backbone, Marionette, TreeView) {
     ...
     }
 
+#### css使用
+组件的图标是基于font-awesome的，样式文件tree_view.css基于bootstrap
+
 #### 初始化组件:
 
-    tree = new TreeView({checkable: true, css: "css/tree.css", is_static: false})
+    tree = new TreeView({checkable: true, is_static: false})
 
 如果 is_static 是true，表示静态树，不会动态加载触发 load 事件。
-
 
 #### 直接加载数据:
 
