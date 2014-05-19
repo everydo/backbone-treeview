@@ -1,6 +1,6 @@
 {
   "name": "treeview",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "dependencies": {
     "sass-bootstrap": "~3.0.2",
     "jquery": "~2.1.0",
@@ -11,5 +11,24 @@
     "modernizr": "~2.7.1",
     "font-awesome": "~4.0.3"
   },
-  "devDependencies": {}
+  "homepage": "https://github.com/everydo/backbone-treeview",
+  "authors": [
+    "paicha <paicha.me@gmail.com>"
+  ],
+  "description": "backbone treeview",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "backbone"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
 }
