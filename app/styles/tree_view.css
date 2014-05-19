@@ -1,0 +1,59 @@
+/* 导航树基本样式 */
+.navtree {
+  width:100%;
+  overflow: auto;
+}
+.navtree ul, li {
+  list-style: none;
+  white-space:nowrap;
+}
+.navtree ul {
+  padding-left: 10px;
+  margin-left: 10px;
+}
+.navtree ul:first-child {
+  padding-left: 0;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+.toggle-icon {
+  color: #777;
+  padding-right: 5px;
+}
+.node {
+  padding: 5px 0 5px 10px;
+}
+
+/* 修正复选框对齐 */
+.navtree label {
+  padding-left: 15px;
+  text-indent: -15px;
+  margin-bottom:0;
+}
+.navtree input[type="checkbox"] {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -4px;
+  *overflow: hidden;
+}
+
+/* 高亮效果 */
+.node-active {
+  background-color: #2299bb;
+}
+.node-active, .node-active span{
+  color: #fff;
+}
+.navtree a:hover{
+  text-decoration: none;
+}
+.node:hover{
+  background-color: #eeeeee;
+}
+.node-active:hover{
+  background-color: #2299bb;
+}
