@@ -42,9 +42,9 @@ module.exports = function(grunt) {
                 files: ['test/spec/{,*/}*.coffee'],
                 tasks: ['coffee:test']
             },
-            compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass']
+            compassLess: {
+                files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+                tasks: ['less']
             },
             livereload: {
                 options: {
@@ -185,20 +185,13 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        compass: {
-            options: {
-                sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
-                imagesDir: '<%= yeoman.app %>/images',
-                javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: '<%= yeoman.app %>/bower_components',
-                relativeAssets: true
-            },
-            dist: {},
-            server: {
+        less: {
+            development: {
                 options: {
-                    debugInfo: true
+                    paths: ['.tmp/styles']
+                },
+                files: {
+                    '.tmp/styles/main.css': '<%= yeoman.app %>/styles/main.less'
                 }
             }
         },
@@ -311,7 +304,7 @@ module.exports = function(grunt) {
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
                         'styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*',
+                        'bower_components/bootstrap/fonts/*.*',
                         'bower_components/font-awesome/fonts/*.*'
                     ]
                 }]
@@ -340,7 +333,7 @@ module.exports = function(grunt) {
                         '<%= yeoman.dist %>/styles/{,*/}*.css',
                         '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
                         '/styles/fonts/{,*/}*.*',
-                        'bower_components/sass-bootstrap/fonts/*.*',
+                        'bower_components/bootstrap/fonts/*.*',
                         'bower_components/font-awesome/fonts/*.*'
                     ]
                 }
@@ -368,7 +361,7 @@ module.exports = function(grunt) {
                 'coffee',
                 //'createDefaultTemplate',
                 //'jst',
-                'compass:server',
+                'less',
                 'connect:test',
                 'open:test',
                 'watch'
@@ -380,7 +373,7 @@ module.exports = function(grunt) {
             'coffee:dist',
             //'createDefaultTemplate',
             //'jst',
-            'compass:server',
+            'less',
             'connect:livereload',
             'open:server',
             'watch'
@@ -394,7 +387,7 @@ module.exports = function(grunt) {
             'coffee',
             //'createDefaultTemplate',
             //'jst',
-            'compass',
+            'less',
             'connect:test',
             'mocha',
         ];
@@ -413,7 +406,7 @@ module.exports = function(grunt) {
         'coffee',
         //'createDefaultTemplate',
         //'jst',
-        'compass:dist',
+        'less',
         'useminPrepare',
         'requirejs',
         'imagemin',
