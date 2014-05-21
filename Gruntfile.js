@@ -238,13 +238,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        uglify: {
-            dist: {
-                files: {
-                    'dist/scripts/treeview.min.js': ['dist/scripts/treeview.js']
-                }
-            }
-        },
         useminPrepare: {
             html: '<%= yeoman.app %>/index.html',
             options: {
@@ -306,7 +299,7 @@ module.exports = function(grunt) {
                     dot: true,
                     cwd: '<%= yeoman.app %>',
                     dest: '<%= yeoman.dist %>',
-                    src: [ // 相当于cwd路径
+                    src: [ // 相对于cwd路径
                         '*.{ico,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
@@ -315,6 +308,10 @@ module.exports = function(grunt) {
                         'bower_components/font-awesome/fonts/*.*'
                     ]
                 }]
+            },
+            treeview:{
+                src: '<%= yeoman.dist %>/scripts/treeview.js',
+                dest: '<%= yeoman.dist %>/scripts/treeview.min.js'
             }
         },
         bower: {
@@ -416,13 +413,14 @@ module.exports = function(grunt) {
         'less',
         'useminPrepare',
         'requirejs',
+        'copy:treeview',
         'imagemin',
         'htmlmin',
         'concat',
         'bowercopy',
         'cssmin',
-        'uglify', // 压缩文件
-        'copy', // 复制文件
+        'uglify',
+        'copy:dist', // 复制文件
         'rev', // 文件命名增加 hash 值
         'usemin' // 优化css、html
     ]);
