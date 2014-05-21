@@ -201,7 +201,7 @@ module.exports = function(grunt) {
                 options: {
                     // `name` and `out` is set by grunt-usemin
                     baseUrl: '.tmp/scripts/',
-                    //optimize: 'none',
+                    optimize: 'none',
                     mainConfigFile: '.tmp/scripts/treeview.js',
                     name: 'treeview',
                     out: 'dist/scripts/treeview.js',
@@ -235,6 +235,13 @@ module.exports = function(grunt) {
                         endFile: '<%= yeoman.app %>/scripts/end.frag'
                     }*/
                     //uglify2: {} // https://github.com/mishoo/UglifyJS2
+                }
+            }
+        },
+        uglify: {
+            dist: {
+                files: {
+                    'dist/scripts/treeview.min.js': ['dist/scripts/treeview.js']
                 }
             }
         },
