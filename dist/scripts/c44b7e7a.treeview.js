@@ -1,6 +1,6 @@
 (function () {define('nav_node_view',['underscore', 'marionette'], function(_, Marionette) {
   return Marionette.CompositeView.extend({
-    template: _.template("<li>\n  <{{ ((id==\"null\") ? \"div\": \"a\") }} class=\"node-a-{{ id }}\" href=\"#\">\n    <div class=\"node\">\n      <span class=\"toggle-icon fa {{ is_folder? \"fa-plus\" : \"hidden\" }}\" ></span>\n      <label class=\"{{ (checkable ? \"\" : \"hidden\") }}\">\n      <input id=\"checkbox-{{ id }}\" type=\"checkbox\" class=\"node-checkbox\">\n      </label>\n      <span class=\"{{ icon }}\"></span>{{ nodeName }}\n    </div>\n  </{{ ((id==\"null\") ? \"div\": \"a\") }}>\n  </li>"),
+    template: _.template("<li>\n  <{{ ((id==\"null\") ? \"div\": \"a\") }} class=\"node-a-{{ id }}\" href=\"#\">\n    <div class=\"node\">\n      <span class=\"toggle-icon fa {{ is_folder? \"fa-plus\" : \"hidden\" }}\" ></span>\n      <label class=\"{{ (checkable ? \"\" : \"hidden\") }}\">\n      <input id=\"checkbox-{{ id }}\" type=\"checkbox\" class=\"node-checkbox\">\n      </label>\n      <span class=\"fa {{ icon }}\"></span>{{ nodeName }}\n    </div>\n  </{{ ((id==\"null\") ? \"div\": \"a\") }}>\n  </li>"),
     tagName: 'ul',
     initialize: function(options) {
       this.collection = this.model.nodes;
