@@ -13,7 +13,7 @@ define [
                                   <label class="{{ (checkable ? "" : "hidden") }}">
                                   <input id="checkbox-{{ id }}" type="checkbox" class="node-checkbox">
                                   </label>
-                                  <span class="{{ icon }}"></span>{{ nodeName }}
+                                  <span class="fa {{ icon }}"></span>{{ nodeName }}
                                 </div>
                               </{{ ((id=="null") ? "div": "a") }}>
                               </li>
